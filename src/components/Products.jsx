@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import getData from '../utils/productData.js' 
+import ProductCard from './ProductCard.jsx';
+import '../App.css'
 
 function Products() {
     const [productData, setproductData] = useState([]);
@@ -17,9 +19,11 @@ function Products() {
     
   return (
     <div>
-        <ul>
+        <ul className='gridView'>
             {productData.map((product) => 
-                <li key = {product.id}>{`${product.id}. ${product.title}`}</li>
+                <li key = {product.id}>
+                  <ProductCard name={product.title} price = {product.price} category={product.category} status = {product.stock == 0 ? false : true}/>
+                </li>
             )}
         </ul>
     </div>

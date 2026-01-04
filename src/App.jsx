@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div>Hello</div> 
+      <div>E-Commerce</div> 
       <Products/>
     </>
   )
